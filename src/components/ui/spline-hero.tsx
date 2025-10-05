@@ -6,65 +6,41 @@ import { Spotlight } from "@/components/ui/spotlight"
 
 export function SplineHeroSection() {
   return (
-    <Card className="w-full h-screen bg-gradient-to-br from-[#1E1E1E] via-[#003C71] to-[#0071C5] relative overflow-hidden border-0 rounded-none">
+    <Card className="w-full h-screen bg-intel-brand relative overflow-hidden border-0 rounded-none">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="#00C7FD"
+        fill="#47A7FF"
       />
 
-      {/* Intel-inspired background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0071C5]/20 via-[#00C7FD]/20 to-[#00D4AA]/20"></div>
+      {/* Intel 2024 background pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-intel-600/30 via-intel-400/25 to-intel-300/30"></div>
       </div>
 
       <div className="flex h-full flex-col md:flex-row">
         {/* Left content */}
         <div className="flex-1 p-8 md:p-12 lg:p-16 relative z-10 flex flex-col justify-center">
-          {/* Intel oneAPI branding */}
-          <div className="mb-4">
-            <span className="text-[#00C7FD] text-lg md:text-xl font-semibold tracking-wide">INTEL oneAPI</span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00C7FD] to-[#00D4AA] mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black intel-text-white mb-6 leading-tight">
             IoSC-EDC
           </h1>
 
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#0071C5] via-[#00C7FD] to-[#00D4AA] mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold intel-text-white mb-6">
             Intel oneAPI Students Club
           </h2>
 
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-white/90 mb-8">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold intel-text-white mb-8">
             East Delhi Campus
           </h3>
 
           <div className="mb-6">
-            <p className="text-lg md:text-xl font-medium text-[#00C7FD] mb-2">
+            <p className="text-lg md:text-xl font-medium text-intel-400 mb-2">
               A FUTURE-FOCUSED, TECH-DRIVEN COMMUNITY
             </p>
           </div>
 
-          <p className="mt-4 text-white/80 max-w-2xl text-lg md:text-xl leading-relaxed">
-            Empowering innovation through Intel oneAPI technology, parallel computing, and hands-on learning experiences at GGSIPU. Join our community of developers and researchers shaping the future of computing.
+          <p className="mt-4 intel-text-white max-w-2xl text-lg md:text-xl leading-relaxed">
+            Our mission is to bring hands-on education based on collaboration and real-life problem-solving through workshops, hackathons, coding competitions, and networking sessions. With those, we equip our members with contemporary skills and industry insights.
           </p>
-
-          <div className="mt-12 flex flex-col sm:flex-row gap-6">
-            <button className="px-8 py-4 bg-gradient-to-r from-[#0071C5] to-[#003C71] hover:from-[#003C71] hover:to-[#0071C5] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-[#0071C5]/25 transform hover:scale-105 transition-all duration-300 border border-[#00C7FD]/30">
-              Explore Events
-            </button>
-            <button className="px-8 py-4 bg-gradient-to-r from-[#00C7FD] to-[#00D4AA] hover:from-[#00D4AA] hover:to-[#00C7FD] text-[#1E1E1E] font-bold text-lg rounded-xl shadow-lg hover:shadow-[#00C7FD]/25 transform hover:scale-105 transition-all duration-300">
-              Join Community
-            </button>
-          </div>
-
-          {/* Intel oneAPI badge */}
-          <div className="mt-8 flex items-center gap-4">
-            <div className="px-4 py-2 bg-[#0071C5]/20 border border-[#00C7FD]/30 rounded-lg backdrop-blur-sm">
-              <span className="text-[#00C7FD] text-sm font-semibold">Powered by Intel oneAPI</span>
-            </div>
-            <div className="px-4 py-2 bg-[#00D4AA]/20 border border-[#00D4AA]/30 rounded-lg backdrop-blur-sm">
-              <span className="text-[#00D4AA] text-sm font-semibold">GGSIPU Official</span>
-            </div>
-          </div>
         </div>
 
         {/* Right content - 3D Scene */}
@@ -74,8 +50,33 @@ export function SplineHeroSection() {
             className="w-full h-full"
           />
 
-          {/* Intel-inspired overlay */}
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0071C5]/5 to-[#003C71]/10 pointer-events-none"></div>
+          {/* Intel 2024 overlay with enhanced colors */}
+          <div className="absolute inset-0 bg-gradient-to-l from-intel-brand/10 via-intel-600/8 to-intel-800/12 pointer-events-none"></div>
+
+          {/* IoSC Boot Text - Centered */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+            <div className="text-center">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-intel-400 mb-2">
+                IoSC
+              </h2>
+              <p className="text-lg md:text-xl font-semibold text-intel-400 tracking-wider">
+                BOT
+              </p>
+            </div>
+          </div>
+
+          {/* Mobile fallback - Show on small screens when Spline might not load well */}
+          <div className="absolute inset-0 md:hidden bg-gradient-to-br from-intel-600/30 to-intel-800/40 flex items-center justify-center">
+            <div className="text-center p-8">
+              <h2 className="text-5xl font-black intel-text-white-glow mb-4">
+                IoSC
+              </h2>
+              <p className="text-xl font-semibold text-intel-400 tracking-wider mb-6">
+                BOOT
+              </p>
+              <div className="w-16 h-16 border-4 border-intel-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            </div>
+          </div>
         </div>
       </div>
     </Card>

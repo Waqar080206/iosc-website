@@ -1,106 +1,74 @@
-@import "tailwindcss";
+/* Import Intel 2024 Brand System */
+@import '../styles/intel-branding.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-  
-/* You can use this with className="input" */
-.input {
-  @apply w-full bg-transparent border border-gray-600 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200;
+  display: none;
 }
 
-/* @layer utilities {
-  @keyframes slideX {
-    0% {
-      transform: translateX(-20vw);
-    }
-    100% {
-      transform: translateX(100vw);
-    }
-  }
-
-  .animate-slideX {
-     animation: slideX linear infinite;
-  }
-} */
-
-@keyframes swingInFromTop {
-  0% {
-    transform: translateY(-300px) rotateZ(0deg);
-    opacity: 0;
-  }
-  30% {
-    transform: translateY(20px) rotateZ(10deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-10px) rotateZ(-8deg);
-  }
-  70% {
-    transform: translateY(5px) rotateZ(5deg);
-  }
-  85% {
-    transform: translateY(-2px) rotateZ(-2deg);
-  }
-  100% {
-    transform: translateY(0) rotateZ(0deg);
-  }
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-.swing-in {
-  animation: swingInFromTop 2s ease-out forwards;
-  transform-origin: top center;
-}
-
-@import "tailwindcss";
-
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-  
 /* You can use this with className="input" */
 .input {
   @apply w-full bg-transparent border border-gray-600 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200;
 }
 
 @keyframes bell-shake {
-  0%   { transform: rotate(0deg); }
-  15%  { transform: rotate(15deg); }
-  30%  { transform: rotate(-12deg); }
-  45%  { transform: rotate(9deg); }
-  60%  { transform: rotate(-6deg); }
-  75%  { transform: rotate(3deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(15deg);
+  }
+
+  30% {
+    transform: rotate(-12deg);
+  }
+
+  45% {
+    transform: rotate(9deg);
+  }
+
+  60% {
+    transform: rotate(-6deg);
+  }
+
+  75% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .animate-bell-shake {
   animation: bell-shake 0.9s ease-in-out infinite;
-}/*
+}
+
+/*
  Spotlight animation */
 @keyframes spotlight {
   0% {
     opacity: 0;
     transform: translate(-72%, -62%) scale(0.5);
   }
+
   100% {
     opacity: 1;
-    transform: translate(-50%,-40%) scale(1);
+    transform: translate(-50%, -40%) scale(1);
   }
 }
 
@@ -119,8 +87,9 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
 .loader::after {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -134,60 +103,74 @@
 }
 
 @keyframes rotation {
-  0% { transform: rotate(0deg) }
-  100% { transform: rotate(360deg) }
-}/* Intel 
-Brand Colors */
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+/* Legacy Intel Brand Colors - Updated to 2024 Palette */
 :root {
-  --intel-blue: #0071C5;
-  --intel-light-blue: #00C7FD;
-  --intel-dark-blue: #003C71;
-  --intel-cyan: #00D4AA;
+  /* Backward compatibility with new Intel 2024 colors */
+  --intel-blue: var(--intel-blue-600);
+  /* #0066CC - Intel Core Blue */
+  --intel-light-blue: var(--intel-blue-400);
+  /* #47A7FF - Intel Light Blue */
+  --intel-dark-blue: var(--intel-blue-800);
+  /* #003366 - Intel Navy */
+  --intel-cyan: var(--intel-blue-300);
+  /* #75BDFF - Intel Cyan */
   --intel-dark: #1E1E1E;
   --intel-white: #FFFFFF;
 }
 
-/* Intel-inspired animations */
-@keyframes intel-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 113, 197, 0.3);
+/* Updated Intel animations with new colors */
+@keyframes intel-glow-legacy {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.3);
   }
+
   50% {
-    box-shadow: 0 0 30px rgba(0, 199, 253, 0.5), 0 0 40px rgba(0, 113, 197, 0.3);
+    box-shadow: 0 0 30px rgba(71, 167, 255, 0.5), 0 0 40px rgba(0, 102, 204, 0.3);
   }
 }
 
-.intel-glow {
-  animation: intel-glow 3s ease-in-out infinite;
+.intel-glow-legacy {
+  animation: intel-glow-legacy 3s ease-in-out infinite;
 }
 
-/* Intel gradient text */
+/* Updated Intel gradient text with new palette */
 .intel-gradient-text {
-  background: linear-gradient(135deg, var(--intel-light-blue) 0%, var(--intel-blue) 50%, var(--intel-cyan) 100%);
+  background: var(--intel-text-gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Intel button styles */
+/* Updated Intel button styles with new colors */
 .intel-button-primary {
-  background: linear-gradient(135deg, var(--intel-blue) 0%, var(--intel-dark-blue) 100%);
-  border: 1px solid rgba(0, 199, 253, 0.3);
+  background: var(--intel-gradient-accent);
+  border: 1px solid var(--intel-blue-400);
   transition: all 0.3s ease;
 }
 
 .intel-button-primary:hover {
-  background: linear-gradient(135deg, var(--intel-dark-blue) 0%, var(--intel-blue) 100%);
-  box-shadow: 0 0 20px rgba(0, 113, 197, 0.4);
+  background: linear-gradient(135deg, var(--intel-blue-500) 0%, var(--intel-blue-400) 100%);
+  box-shadow: var(--intel-glow-md);
 }
 
 .intel-button-secondary {
-  background: linear-gradient(135deg, var(--intel-light-blue) 0%, var(--intel-cyan) 100%);
-  color: var(--intel-dark);
+  background: linear-gradient(135deg, var(--intel-blue-400) 0%, var(--intel-blue-300) 100%);
+  color: var(--intel-blue-950);
   transition: all 0.3s ease;
 }
 
 .intel-button-secondary:hover {
-  background: linear-gradient(135deg, var(--intel-cyan) 0%, var(--intel-light-blue) 100%);
-  box-shadow: 0 0 20px rgba(0, 199, 253, 0.4);
+  background: linear-gradient(135deg, var(--intel-blue-300) 0%, var(--intel-blue-400) 100%);
+  box-shadow: var(--intel-glow-sm);
 }

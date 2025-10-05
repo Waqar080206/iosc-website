@@ -53,44 +53,43 @@ const HeroSection = () => {
         };
     }, [showSplash]);
 
-    // Simple 2D Splash Screen with Intel Branding
+    // Simple 2D Splash Screen with Intel 2024 Branding
     if (showSplash) {
         return (
-            <section className="fixed inset-0 bg-gradient-to-br from-[#1E1E1E] via-[#003C71] to-[#0071C5] w-full h-full flex items-center justify-center cursor-pointer z-50">
-                {/* Intel-inspired background pattern */}
-                <div className="absolute inset-0 opacity-20">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0071C5]/30 via-[#00C7FD]/20 to-[#00D4AA]/30 animate-pulse"></div>
+            <section className="fixed inset-0 bg-intel-brand w-full h-full flex items-center justify-center cursor-pointer z-50">
+                {/* Intel 2024 background pattern */}
+                <div className="absolute inset-0 opacity-30">
+                    <div className="absolute inset-0 bg-gradient-to-r from-intel-500/40 via-intel-400/30 to-intel-300/40 animate-intel-pulse"></div>
                 </div>
                 
-                {/* Simple 2D IoSC Text with Intel Colors */}
+                {/* Intel Core Ultra Badge */}
+                <div className="absolute top-8 left-8 intel-badge px-4 py-2 rounded-lg">
+                    <span className="text-intel-400 text-sm font-semibold tracking-wider">INTEL CORE ULTRA</span>
+                </div>
+
+                {/* Simple 2D IoSC Text with Intel 2024 Colors */}
                 <div className="text-center relative z-10">
-                    {/* Intel oneAPI badge */}
-                    <div className={`mb-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                        <span className="text-[#00C7FD] text-lg md:text-xl font-semibold tracking-wide">INTEL oneAPI</span>
-                    </div>
-                    
+
                     <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-                        <h1 className={`${orbitron.className} text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-[#00C7FD] to-[#00D4AA] select-none whitespace-nowrap`}>
-                            IoSC
+                        <h1 className={`${orbitron.className} text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-black intel-text-gradient select-none whitespace-nowrap`}>
+                            I o S C
                         </h1>
                     </div>
-                    
-                    {/* Subtitle */}
-                    <div className={`mt-4 transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                        <p className={`${inter.className} text-xl md:text-2xl text-[#00C7FD] font-semibold`}>
-                            Students Club - East Delhi Campus
-                        </p>
-                    </div>
-                    
+
                     {/* Click instruction */}
                     <div className={`mt-8 transition-all duration-1000 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                        <p className={`${inter.className} text-lg text-white/70 animate-pulse`}>
+                        <p className={`${inter.className} text-lg intel-text-white-bright animate-intel-pulse`}>
                             Click anywhere to continue
                         </p>
                         <div className="mt-4 flex justify-center">
-                            <div className="w-8 h-8 border-2 border-[#00C7FD] rounded-full animate-ping"></div>
+                            <div className="w-8 h-8 border-2 border-intel-400 rounded-full animate-ping"></div>
                         </div>
                     </div>
+                </div>
+                
+                {/* Intel branding watermark */}
+                <div className="absolute bottom-8 right-8 text-intel-400/60 text-sm font-medium">
+                    Powered by Intel
                 </div>
             </section>
         );
@@ -98,9 +97,8 @@ const HeroSection = () => {
 
     // Main Hero Section - Only Spline 3D Component
     return (
-        <section className={`relative min-h-screen w-full transition-all duration-1000 ${
-            heroAnimating ? 'animate-hero-entrance' : ''
-        }`}>
+        <section className={`relative min-h-screen w-full transition-all duration-1000 ${heroAnimating ? 'animate-hero-entrance' : ''
+            }`}>
             <SplineHeroSection />
         </section>
     );

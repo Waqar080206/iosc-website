@@ -1,0 +1,206 @@
+/* Intel 2024 Brand Design Tokens */
+:root {
+    /* Intel Primary Color Palette */
+    --intel-blue-50: #E8F4FF;
+    --intel-blue-100: #D1E9FF;
+    --intel-blue-200: #A3D3FF;
+    --intel-blue-300: #75BDFF;
+    --intel-blue-400: #47A7FF;
+    --intel-blue-500: #1991FF;
+    /* Intel Primary Blue */
+    --intel-blue-600: #0066CC;
+    /* Intel Core Blue */
+    --intel-blue-700: #004C99;
+    /* Intel Deep Blue */
+    --intel-blue-800: #003366;
+    /* Intel Navy */
+    --intel-blue-900: #001A33;
+    /* Intel Midnight */
+    --intel-blue-950: #000D1A;
+    /* Intel Black Blue */
+    --intel-brand-primary: #0F2793;
+    /* Intel Brand Primary */
+
+    /* Intel Gradient Definitions */
+    --intel-gradient-primary: linear-gradient(135deg, var(--intel-blue-900) 0%, var(--intel-blue-800) 25%, var(--intel-blue-600) 75%, var(--intel-blue-500) 100%);
+    --intel-gradient-secondary: linear-gradient(45deg, var(--intel-blue-950) 0%, var(--intel-blue-900) 50%, var(--intel-blue-800) 100%);
+    --intel-gradient-hero: radial-gradient(ellipse at center top, var(--intel-blue-800) 0%, var(--intel-blue-900) 50%, var(--intel-blue-950) 100%);
+    --intel-gradient-accent: linear-gradient(135deg, var(--intel-blue-600) 0%, var(--intel-blue-500) 100%);
+
+    /* Intel Text Gradients */
+    --intel-text-gradient-primary: linear-gradient(135deg, #FFFFFF 0%, var(--intel-blue-300) 50%, var(--intel-blue-400) 100%);
+    --intel-text-gradient-accent: linear-gradient(135deg, var(--intel-blue-500) 0%, var(--intel-blue-300) 100%);
+
+    /* Intel Shadow System */
+    --intel-shadow-sm: 0 2px 8px rgba(25, 145, 255, 0.1);
+    --intel-shadow-md: 0 4px 16px rgba(25, 145, 255, 0.15);
+    --intel-shadow-lg: 0 8px 32px rgba(25, 145, 255, 0.2);
+    --intel-shadow-xl: 0 16px 64px rgba(25, 145, 255, 0.25);
+
+    /* Intel Glow Effects */
+    --intel-glow-sm: 0 0 10px rgba(25, 145, 255, 0.3);
+    --intel-glow-md: 0 0 20px rgba(25, 145, 255, 0.4);
+    --intel-glow-lg: 0 0 40px rgba(25, 145, 255, 0.5);
+}
+
+/* Intel Brand Utility Classes */
+.intel-bg-primary {
+    background: var(--intel-gradient-primary);
+}
+
+.intel-bg-secondary {
+    background: var(--intel-gradient-secondary);
+}
+
+.intel-bg-hero {
+    background: var(--intel-gradient-hero);
+}
+
+.intel-bg-accent {
+    background: var(--intel-gradient-accent);
+}
+
+.intel-bg-solid {
+    background: var(--intel-brand-primary);
+}
+
+/* Shiny White Text Classes */
+.intel-text-white {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.intel-text-white-glow {
+    color: #FFFFFF;
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.intel-text-white-bright {
+    color: #FFFFFF;
+    filter: brightness(1.2);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.intel-text-gradient {
+    background: var(--intel-text-gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intel-text-accent {
+    background: var(--intel-text-gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intel-glow {
+    box-shadow: var(--intel-glow-md);
+}
+
+.intel-glow-hover:hover {
+    box-shadow: var(--intel-glow-lg);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Intel Loading Spinner */
+.intel-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--intel-blue-800);
+    border-top: 3px solid var(--intel-blue-500);
+    border-radius: 50%;
+    animation: intel-spin 1s linear infinite;
+}
+
+@keyframes intel-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Intel Button Styles */
+.intel-btn-primary {
+    background: var(--intel-gradient-accent);
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--intel-blue-400);
+    transition: all 0.3s ease;
+}
+
+.intel-btn-primary:hover {
+    background: linear-gradient(135deg, var(--intel-blue-500) 0%, var(--intel-blue-400) 100%);
+    box-shadow: var(--intel-glow-md);
+    transform: translateY(-2px);
+}
+
+.intel-btn-secondary {
+    background: rgba(25, 145, 255, 0.1);
+    color: var(--intel-blue-400);
+    border: 1px solid var(--intel-blue-600);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.intel-btn-secondary:hover {
+    background: rgba(25, 145, 255, 0.2);
+    box-shadow: var(--intel-glow-sm);
+}
+
+/* Intel Badge Styles */
+.intel-badge {
+    background: rgba(25, 145, 255, 0.15);
+    border: 1px solid var(--intel-blue-600);
+    backdrop-filter: blur(12px);
+    color: var(--intel-blue-300);
+}
+
+/* Responsive Intel Gradients */
+@media (max-width: 768px) {
+    :root {
+        /* Simplified gradients for mobile performance */
+        --intel-gradient-primary: linear-gradient(135deg, var(--intel-blue-900) 0%, var(--intel-blue-600) 100%);
+        --intel-gradient-hero: linear-gradient(180deg, var(--intel-blue-800) 0%, var(--intel-blue-950) 100%);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .intel-glow-hover:hover {
+        transition: none;
+    }
+
+    .intel-spinner {
+        animation: none;
+        border-top-color: var(--intel-blue-500);
+    }
+}/* H
+ide Spline Watermark */
+canvas + div,
+[data-spline-watermark],
+div[style*="position: absolute"][style*="bottom: 16px"][style*="right: 16px"] {
+    display: none !important;
+}
+
+/* Spline Container Alignment */
+.spline-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure Spline canvas is properly centered */
+canvas {
+    display: block;
+    margin: 0 auto;
+}
