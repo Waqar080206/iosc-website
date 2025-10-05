@@ -91,4 +91,103 @@
 
 .animate-bell-shake {
   animation: bell-shake 0.9s ease-in-out infinite;
+}/*
+ Spotlight animation */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%,-40%) scale(1);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease .75s 1 forwards;
+}
+
+/* Loader styles */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #3b82f6;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}/* Intel 
+Brand Colors */
+:root {
+  --intel-blue: #0071C5;
+  --intel-light-blue: #00C7FD;
+  --intel-dark-blue: #003C71;
+  --intel-cyan: #00D4AA;
+  --intel-dark: #1E1E1E;
+  --intel-white: #FFFFFF;
+}
+
+/* Intel-inspired animations */
+@keyframes intel-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 113, 197, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 199, 253, 0.5), 0 0 40px rgba(0, 113, 197, 0.3);
+  }
+}
+
+.intel-glow {
+  animation: intel-glow 3s ease-in-out infinite;
+}
+
+/* Intel gradient text */
+.intel-gradient-text {
+  background: linear-gradient(135deg, var(--intel-light-blue) 0%, var(--intel-blue) 50%, var(--intel-cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Intel button styles */
+.intel-button-primary {
+  background: linear-gradient(135deg, var(--intel-blue) 0%, var(--intel-dark-blue) 100%);
+  border: 1px solid rgba(0, 199, 253, 0.3);
+  transition: all 0.3s ease;
+}
+
+.intel-button-primary:hover {
+  background: linear-gradient(135deg, var(--intel-dark-blue) 0%, var(--intel-blue) 100%);
+  box-shadow: 0 0 20px rgba(0, 113, 197, 0.4);
+}
+
+.intel-button-secondary {
+  background: linear-gradient(135deg, var(--intel-light-blue) 0%, var(--intel-cyan) 100%);
+  color: var(--intel-dark);
+  transition: all 0.3s ease;
+}
+
+.intel-button-secondary:hover {
+  background: linear-gradient(135deg, var(--intel-cyan) 0%, var(--intel-light-blue) 100%);
+  box-shadow: 0 0 20px rgba(0, 199, 253, 0.4);
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import STARS from "@/assets/stars.png";
 import { FaArrowRightLong, FaChevronLeft, FaChevronRight } from "react-icons/fa6"; // Add navigation icons
-import './sprinkleAnimation.css';
+
 
 
 import I3 from '@/assets/teamBg/i3.png';
